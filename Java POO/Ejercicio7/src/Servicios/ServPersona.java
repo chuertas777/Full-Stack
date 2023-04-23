@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Ingenieria
+ * @author CamiloH
  */
 public class ServPersona {
 
