@@ -1,0 +1,25 @@
+package javaintro_exercises;
+import java.util.Scanner;
+/**
+ *
+ * @author Sheepard
+ */
+public class javaintro_excersice08 {
+    public static void main(String[] args) {
+        /*Realizar un programa que solo permita introducir frases o palabras de 8 de largo. Si
+el usuario ingresa una frase o palabra de 8 de largo se deberá de imprimir un mensaje
+por pantalla que diga “CORRECTO”, en caso contrario, se deberá imprimir
+“INCORRECTO”. Nota: investigar la función Lenght() en Java.*/
+        
+        Scanner read = new Scanner(System.in);
+        
+        System.out.println("Ingrese una palabra o frase de 8 caracteres de largo:");
+        String frase = read.nextLine();
+        
+        if (frase.length() == 8) {
+            System.out.println("CORRECTO!");
+        } else {
+            System.out.println("INCORRECTO!");
+        }
+    }
+}
