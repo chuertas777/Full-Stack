@@ -7,6 +7,8 @@
  */
 package ejercicio2;
 
+import Servicios.ServPerro;
+
 /**
  *
  * @author CamiloH
@@ -18,6 +20,9 @@ public class Ejercicio2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        ServPerro srv = new ServPerro();
+        srv.crearPerro();
+
     }
-    
+
 }
