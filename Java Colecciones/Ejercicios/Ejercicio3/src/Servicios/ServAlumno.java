@@ -38,12 +38,7 @@ public class ServAlumno {
                 al.setNotas(al.getNota());
                
             }
-            for (Integer sumar : al.getNotas()) {
-                suma +=sumar;
-                System.out.println("Su promedio es: " + suma / 3 );
-            }
-            
-            
+             
             System.out.println("¿Desea ingresar otra alumno? \n  Y para Si o N para No ");
             letra = leer.nextLine();
            //Verificar que la letra ingresada fue correcta o no 
@@ -72,7 +67,7 @@ public class ServAlumno {
            promedio final, devuelto por el método y mostrado en el main.
      */
     public void notaFinal() {
-        double notaf = 0;
+        
         System.out.println("Ingrese el nombre del alumno a buscar: ");
         String alumno = leer.nextLine();
         Iterator<String> buscar = al.getAlumnos().iterator();
@@ -80,15 +75,18 @@ public class ServAlumno {
         while (buscar.hasNext()) {
             if (buscar.next().equals(alumno)) {
                 System.out.println("Alumno: " + alumno);
-
+                 
+                int suma=0;       
                 for (int not : al.getNotas()) {
                     System.out.println("Nota :   " + not);
-
+                    suma += not;      
+                      
                 }
-
+                double promedio = (double) suma /al.getNotas().size();
+                System.out.println("Promedio: " + promedio);       
                 break;
             } else {
-                System.out.println("Prueba");
+                System.out.println("El alumno no existe en la lista");
             }
 
         }
