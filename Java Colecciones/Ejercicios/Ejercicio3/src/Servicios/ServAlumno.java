@@ -19,13 +19,14 @@ public class ServAlumno {
 
     /*
            En el servicio de Alumno deberemos tener un bucle que crea un objeto Alumno. Se pide 
-           toda la información al usuario y ese Alumno se guarda en una lista de tipo Alumno y se le 
+           toda la informaciÃ³n al usuario y ese Alumno se guarda en una lista de tipo Alumno y se le 
            pregunta al usuario si quiere crear otro Alumno o no.
      */
     public void crearAlumno() {
         String letra = "";
         int p = 0, suma = 0;
 
+          //MÃ©todo para pedirle al usuario el nombre del alumno y las notas que tiene ese alumno 
         do {
             System.out.println("Ingrese el nombre del alumno: ");
             al.setNombre(leer.nextLine());
@@ -43,9 +44,9 @@ public class ServAlumno {
             }
             
             
-            System.out.println("¿Desea ingresar otra alumno? \n  Y para Si o N para No ");
+            System.out.println("Â¿Desea ingresar otra alumno? \n  Y para Si o N para No ");
             letra = leer.nextLine();
-
+           //Verificar que la letra ingresada fue correcta o no 
             do {
                 if (!letra.equalsIgnoreCase("y") && !letra.equalsIgnoreCase("n")) {
                     System.out.println("Letra incorrecta, vuelva a ingresar ");
@@ -64,11 +65,11 @@ public class ServAlumno {
     }
 
     /*
-           Después de ese bucle tendremos el siguiente método en el servicio de Alumno: 
-           Método notaFinal(): El usuario ingresa el nombre del alumno que quiere calcular su nota 
-           final y se lo busca en la lista de Alumnos. Si está en la lista, se llama al método. Dentro 
-           del método se usará la lista notas para calcular el promedio final de alumno. Siendo este 
-           promedio final, devuelto por el método y mostrado en el main.
+           DespuÃ©s de ese bucle tendremos el siguiente mÃ©todo en el servicio de Alumno: 
+           MÃ©todo notaFinal(): El usuario ingresa el nombre del alumno que quiere calcular su nota 
+           final y se lo busca en la lista de Alumnos. Si estÃ¡ en la lista, se llama al mÃ©todo. Dentro 
+           del mÃ©todo se usarÃ¡ la lista notas para calcular el promedio final de alumno. Siendo este 
+           promedio final, devuelto por el mÃ©todo y mostrado en el main.
      */
     public void notaFinal() {
         double notaf = 0;
