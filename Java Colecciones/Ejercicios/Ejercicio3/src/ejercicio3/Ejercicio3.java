@@ -20,7 +20,7 @@ public class Ejercicio3 {
         
         ServAlumno srv = new ServAlumno();
         System.out.println("Hello world");
-        srv.crearAlumno();
+        srv.crearAlumnos();
         srv.notaFinal();
         
         

@@ -6,56 +6,34 @@
  */
 package Entidades;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author CamiloH
  */
 public class Alumno {
-    
-    private ArrayList<String> alumnos = new ArrayList();
     private String nombre;
-    private ArrayList<Integer> notas = new ArrayList();
-    private int nota;
+    private List<Integer> notas;
 
-    public Alumno() {
-    }
-
-    public ArrayList<String> getAlumnos() {
-        return alumnos;
-    }
-
-    public void setAlumnos(String alumno) {
-        this.alumnos.add(alumno);
-    }
-
-    public ArrayList<Integer> getNotas() {
-        return notas;
-    }
-
-    public void setNotas(int nota) {
-        this.notas.add(nota);
+    public Alumno(String nombre, List<Integer> notas) {
+        this.nombre = nombre;
+        this.notas = notas;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public List<Integer> getNotas() {
+        return notas;
     }
 
-    public int getNota() {
-        return nota;
+    public double calcularPromedio() {
+        int sum = 0;
+        for (int nota : notas) {
+            sum += nota;
+        }
+        return (double) sum / notas.size();
     }
-
-    public void setNota(int nota) {
-        this.nota = nota;
-    }
-    
-    
-    
-    
-    
 }
