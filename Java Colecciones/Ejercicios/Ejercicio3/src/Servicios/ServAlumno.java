@@ -41,12 +41,7 @@ public class ServAlumno {
 
             System.out.println("¿Desea crear otro alumno? (s/n)");
             opcion = scanner.nextLine();
-            if (!opcion.equals("s") ||!opcion.equals("n") ) {
-            System.out.println("Ingrese la letra correcta ");
-
-        } else {
-            
-            }
+           
             
             
         }
