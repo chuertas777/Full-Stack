@@ -1,8 +1,7 @@
 /*
-            * Crear una clase llamada Alumno que mantenga información sobre las notas de distintos 
-           alumnos. La clase Alumno tendrá como atributos, su nombre y una lista de tipo Integer 
-           con sus 3 notas. 
-          
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package Entidades;
 
@@ -10,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author CamiloH
+ * @author Ingenieria
  */
 public class Alumno {
     private String nombre;
@@ -37,3 +36,4 @@ public class Alumno {
         return (double) sum / notas.size();
     }
 }
+
