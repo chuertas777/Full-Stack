@@ -13,6 +13,8 @@
  */
 package ejercicio5;
 
+import Servicios.ServPaises;
+
 /**
  *
  * @author CamiloH
@@ -24,6 +26,13 @@ public class Ejercicio5 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        ServPaises srv = new ServPaises();
+        srv.ingresarPaises();
+        System.out.println("------------------------");
+        srv.mostrarPaises();
+        
+        srv.ordenarPaises();
     }
     
 }
