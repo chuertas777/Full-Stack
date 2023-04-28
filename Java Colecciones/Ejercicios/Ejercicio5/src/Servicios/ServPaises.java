@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -54,6 +55,32 @@ public class ServPaises {
         for (Paises ordenAlfa : ordenar) {
             System.out.println("País:" + ordenAlfa);
         }
+
+    }
+
+    public void eliminarPaises() {
+        System.out.println("Ingrese un país a eliminar: ");
+        String del = leer.nextLine();
+        Iterator<Paises> ite = listaP.iterator();
+
+        int cont = 0;
+        while (ite.hasNext()) {
+            Paises p = ite.next();
+
+            if (p.getPais().equals(del)) {
+                ite.remove();
+                System.out.println("País eliminado...");
+
+                cont++;
+
+            }
+
+        }
+        if (cont == 0) {
+            System.out.println("No se encuentra el país a eliminar");
+
+        }
+        mostrarPaises();
 
     }
 

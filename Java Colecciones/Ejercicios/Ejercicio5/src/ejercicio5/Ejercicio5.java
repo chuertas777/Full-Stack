@@ -29,10 +29,13 @@ public class Ejercicio5 {
         
         ServPaises srv = new ServPaises();
         srv.ingresarPaises();
-        System.out.println("------------------------");
+        System.out.println("-------------Mostrar Paises---------------");
         srv.mostrarPaises();
-        
+        System.out.println("-------------Ordenar Paises alfabeticamente -----------");
         srv.ordenarPaises();
+        System.out.println("-------------Eliminar paises -----------");
+        srv.eliminarPaises();
+         
     }
     
 }
