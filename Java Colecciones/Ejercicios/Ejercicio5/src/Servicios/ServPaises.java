@@ -66,7 +66,6 @@ public class ServPaises {
         int cont = 0;
         while (ite.hasNext()) {
             Paises p = ite.next();
-
             if (p.getPais().equals(del)) {
                 ite.remove();
                 System.out.println("País eliminado...");
