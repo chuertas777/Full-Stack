@@ -41,6 +41,7 @@ public class ServProducto {
 
     }
 
+    //método para editar el precio del producto
     public void editarPrecio() {
         String opcion;
 
