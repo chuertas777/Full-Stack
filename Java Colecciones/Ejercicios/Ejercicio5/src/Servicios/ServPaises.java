@@ -18,7 +18,6 @@ import java.util.Scanner;
  */
 public class ServPaises {
 
-    // HashSet<String> listaP = new HashSet();
     HashSet<Paises> listaP = new HashSet();
     Paises paises = new Paises();
     Scanner leer = new Scanner(System.in);
