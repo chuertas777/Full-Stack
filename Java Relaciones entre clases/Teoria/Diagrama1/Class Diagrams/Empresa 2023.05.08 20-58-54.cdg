@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Empresa">
+  <ClassDiagramComponents>
+    <Class name="Empresa" package="Entidades" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="empleados" type="List&lt;Empleados&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getEmpleados" returnType="List&lt;Empleados&gt;" visibility="public"/>
+        <Method name="setEmpleados" returnType="void" visibility="public">
+          <Argument type="List&lt;Empleados&gt;" name="empleados"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
