@@ -4,6 +4,8 @@
  */
 package practica1;
 
+import Entidades.Dni;
+
 /**
  *
  * @author CamiloH
@@ -15,6 +17,9 @@ public class Practica1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Dni dni = new Dni();
+        dni.
+        
     }
     
 }

@@ -21,7 +21,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Persona" package="Entidades" visibility="public" xPosition="320.0" yPosition="20.0">
+    <Class name="Persona" package="Entidades" visibility="public" xPosition="343.0" yPosition="49.0">
       <Fields>
         <Field name="nombre" type="String" visibility="private"/>
         <Field name="apellido" type="String" visibility="private"/>
