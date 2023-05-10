@@ -18,6 +18,54 @@ public class Persona {
 
     public Persona() {
     }
+
+    public Persona(String nombre, String apellido, Dni dni) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+    }
+    
+    
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public Dni getDni() {
+        return dni;
+    }
+
+    public void setDni(Dni dni) {
+        this.dni = dni;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(" Persona{");
+        sb.append("\n nombre=" ).append(nombre);
+        sb.append(" \n apellido=").append(apellido);
+        sb.append("\n dni=").append(dni.getSerie() + "-" +  dni.getNumero());
+        sb.append('}');
+        return sb.toString();
+    }
+
+    
+    
+    
+    
     
     
     

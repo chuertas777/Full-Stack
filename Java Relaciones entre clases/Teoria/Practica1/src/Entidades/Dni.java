@@ -16,6 +16,11 @@ public class Dni {
     public Dni() {
     }
 
+    public Dni(char serie, int numero) {
+        this.serie = serie;
+        this.numero = numero;
+    }
+    
     public char getSerie() {
         return serie;
     }
@@ -30,6 +35,11 @@ public class Dni {
 
     public void setNumero(int numero) {
         this.numero = numero;
+    }
+
+    @Override
+    public String toString() {
+        return "Dni{" + "numero=" + numero + '}';
     }
     
     
