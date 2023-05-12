@@ -6,6 +6,7 @@ package Entidades;
 
 import java.util.ArrayList;
 
+
 /**
  *
  * @author CamiloH
@@ -24,10 +25,11 @@ public class Juego {
     public void ronda() {
 
         for (Jugador jugador : jugadores) {
-            if (jugador.disparo(ra)) {
+            if (!jugador.disparo(ra)) {
                 System.out.println("Siguiente jugador ");
-
+                System.out.println(jugador);
             } else {
+                System.out.println(jugador);
                 System.out.println("Fin de juego ");
                 break;
             }

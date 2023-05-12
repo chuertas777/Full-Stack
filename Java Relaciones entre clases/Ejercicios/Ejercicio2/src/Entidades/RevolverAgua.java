@@ -5,6 +5,8 @@
  */
 package Entidades;
 
+import java.util.Random;
+
 /**
  *
  * @author CamiloH
@@ -16,37 +18,32 @@ public class RevolverAgua {
 
     //Metodo para llenar las posiciones aletoriamente
     public void llenarRevolver() {
-
-        posicionActual = (int) (Math.random() * 6) + 1;
-        posicionAgua = (int) (Math.random() * 6) + 1;
+        Random azar= new Random();
+        posicionActual = azar.nextInt(5)+1;
+        posicionAgua = azar.nextInt(5)+1;
 
     }
 
     public boolean mojar() {
-        if (posicionActual == posicionAgua) {
-            return true;
-        } else {
-            return false;
-        }
-
+        return (posicionActual == posicionAgua);
     }
-    
-    public void siguienteChorro(){
-        posicionActual += 1; 
-    
+
+    public void siguienteChorro() {
+        if (posicionActual < 6) {
+            posicionActual += 1;
+        } else {
+            posicionActual = 1;
+        }
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("RevolverAgua{");
-        sb.append("\nposicionActual=").append(posicionActual);
-        sb.append(",\nposicionAgua=").append(posicionAgua);
+        sb.append("posicionActual=").append(posicionActual);
+        sb.append(", posicionAgua=").append(posicionAgua);
         sb.append('}');
         return sb.toString();
     }
-    
-    
-    
 
 }

@@ -10,6 +10,9 @@ import Entidades.RevolverAgua;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
+
+
 /**
  *
  * @author CamiloH
@@ -27,19 +30,18 @@ public class Ejercicio_2 {
         Juego j = new Juego();
         RevolverAgua ra = new RevolverAgua();
         ra.llenarRevolver();
+        System.out.println("Inicio "+ra);
         
-        for (int i = 0; i < 6; i++) {
+        for (int i = 1; i <= 6; i++) {
             Jugador ju = new Jugador();
-            System.out.println("Ingrese el id: ");
-            ju.setNumJ(leer.nextInt());
-            System.out.println("Ingrese el nombre del jugador: ");
-            ju.setNombre(leer.next());
-            
-            
+            System.out.println("Ingrese el nombre del jugador: " );
+             ju.setNombre(leer.next());
+             ju.setNumJ(i);
+            jugadores.add(ju);
         }
         
-        
         j.llenarJuego(jugadores, ra);
+        j.ronda();
         
         
         

@@ -12,14 +12,13 @@ public class Jugador {
 
     private int numJ;
     private String nombre;
-    private boolean mojado = true;
+    private boolean mojado = false;
 
     public boolean disparo(RevolverAgua r) {
-
-        if (r.mojar() == true) {
-            mojado = false;
-        } else {
+        System.out.println(r);
+        if (r.mojar()) {
             mojado = true;
+        } else {
             r.siguienteChorro();
         }
 
@@ -56,6 +55,17 @@ public class Jugador {
 
     public void setMojado(boolean mojado) {
         this.mojado = mojado;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Jugador{");
+        sb.append("numJ=").append(numJ);
+        sb.append(", nombre=").append(nombre);
+        sb.append(", mojado=").append(mojado);
+        sb.append('}');
+        return sb.toString();
     }
     
     
