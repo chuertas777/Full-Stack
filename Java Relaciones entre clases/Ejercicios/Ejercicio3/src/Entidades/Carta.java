@@ -9,7 +9,7 @@ package Entidades;
  * @author CamiloH
  */
 public class Carta {
-    
+
     private int numero;
     private String palo;
 
@@ -47,10 +47,4 @@ public class Carta {
         return sb.toString();
     }
 
-    
-
-    
-    
-    
-    
 }

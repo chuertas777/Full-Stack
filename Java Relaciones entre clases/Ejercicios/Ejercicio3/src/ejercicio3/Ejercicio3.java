@@ -19,11 +19,27 @@ public class Ejercicio3 {
         // TODO code application logic here
         
         Baraja bar = new Baraja();
-        System.out.println("---------------------------");
-        System.out.println(bar);
+        System.out.println("-----------Barajar----------------");
         bar.barajar();
-        System.out.println("---------------------------");
+        System.out.println("-------------Barajado--------------");
         System.out.println(bar);
+        System.out.println("------------Siguiente Carta---------------");
+        bar.siguienteCarta();
+        System.out.println("Monton" + bar.toString2());
+        System.out.println("------------Monton de cartas---------------");
+        System.out.println(bar.toString2());
+        System.out.println("------------Cartas disponibles---------------");
+        bar.cartasDisponibles();
+        System.out.println("-------------Dar Cartas--------------");
+        bar.darCartas(5);
+        System.out.println("-------------Monton--------------");
+        System.out.println(bar.toString2());
+        System.out.println("-------------Cartas del Monton--------------");
+        bar.cartasMonton();
+        System.out.println("-------------Mostrar Baraja--------------");
+        bar.mostrarBaraja();
+        System.out.println("------------Cartas disponibles---------------");
+        bar.cartasDisponibles();
     }
     
 }
