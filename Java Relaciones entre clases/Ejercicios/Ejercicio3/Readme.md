@@ -3,8 +3,9 @@ y 12 (el 8 y el 9 no los incluimos) y un palo (espadas, bastos, oros y copas). E
 contener un método toString() que retorne el número de carta y el palo. La baraja estará
 compuesta por un conjunto de cartas, 40 exactamente.
 Las operaciones que podrá realizar la baraja son:
-
+<br>
 • barajar(): cambia de posición todas las cartas aleatoriamente.
+<br>
 • siguienteCarta(): devuelve la siguiente carta que está en la baraja, cuando no haya más o
 se haya llegado al final, se indica al usuario que no hay más cartas.
 • cartasDisponibles(): indica el número de cartas que aún se puede repartir.
