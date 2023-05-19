@@ -17,6 +17,7 @@ public class Baraja {
     private ArrayList<Carta> monton;
 
     //Constructor baraja
+    //Inicializamos los arrayList de cartas y el montÃ³n 
     public Baraja() {
         cartas = new ArrayList();
         monton = new ArrayList();
@@ -35,18 +36,18 @@ public class Baraja {
         return cartas;
     }
 
-    //método barajar 
+    //mÃ©todo barajar en modo random 
     public void barajar() {
         Collections.shuffle(cartas);
 
     }
 
     /*
-        siguienteCarta(): devuelve la siguiente carta que está en la baraja, 
-        cuando no haya más o se haya llegado al final, se indica al usuario 
-        que no hay más cartas.
+        siguienteCarta(): devuelve la siguiente carta que estÃ¡ en la baraja, 
+        cuando no haya mÃ¡s o se haya llegado al final, se indica al usuario 
+        que no hay mÃ¡s cartas.
      */
-    //método siguiente carta
+    //mÃ©todo siguiente carta
     public Carta siguienteCarta() {
 
         if (cartas.isEmpty()) {
@@ -59,7 +60,7 @@ public class Baraja {
     }
 
     /*
-        cartasDisponibles(): indica el número de cartas que aún 
+        cartasDisponibles(): indica el nÃºmero de cartas que aÃºn 
         se puede repartir.
      */
     public void cartasDisponibles() {
@@ -67,9 +68,9 @@ public class Baraja {
     }
 
     /*
-        darCartas(): dado un número de cartas que nos pidan, le devolveremos 
-    ese número de cartas. En caso de que haya menos cartas que las pedidas, 
-    no devolveremos nada, pero debemos indicárselo al usuario.
+        darCartas(): dado un nÃºmero de cartas que nos pidan, le devolveremos 
+    ese nÃºmero de cartas. En caso de que haya menos cartas que las pedidas, 
+    no devolveremos nada, pero debemos indicÃ¡rselo al usuario.
      */
     public void darCartas(int ncartas) {
         for (int i = 0; i < ncartas; i++) {
@@ -81,12 +82,12 @@ public class Baraja {
 
     /*
         cartasMonton(): mostramos aquellas cartas que ya han salido, 
-        si no ha salido ninguna indicárselo al usuario
+        si no ha salido ninguna indicÃ¡rselo al usuario
      */
     public void cartasMonton() {
         if (monton.isEmpty()) {
             System.out.println("Todavia no hay ninguna carta "
-                    + "en el montón");
+                    + "en el montÃ³n");
 
         } else {
             for (Carta carta : monton) {
@@ -99,7 +100,7 @@ public class Baraja {
     /*
         mostrarBaraja(): muestra todas las cartas hasta el final. 
         Es decir, si se saca una carta y
-        luego se llama al método, este no mostrara esa primera carta.
+        luego se llama al mÃ©todo, este no mostrara esa primera carta.
     */
     public void mostrarBaraja(){
         for (Carta carta : cartas) {
@@ -108,7 +109,7 @@ public class Baraja {
     }
     
     
-
+    //MÃ©todo para imprimir la baraja 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
