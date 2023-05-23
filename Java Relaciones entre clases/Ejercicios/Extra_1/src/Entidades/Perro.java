@@ -4,6 +4,8 @@
  */
 package Entidades;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author CamiloH
@@ -13,6 +15,7 @@ public class Perro {
     private String nombre,raza;
     private int edad;
     private double tamanio;
+    private ArrayList<Perro> perros = new ArrayList<>();
 
     public Perro() {
     }
@@ -56,15 +59,26 @@ public class Perro {
         this.tamanio = tamanio;
     }
 
+    public ArrayList<Perro> getPerros() {
+        return perros;
+    }
+
+    public void setPerros(Perro perro) {
+        this.perros.add(perro);
+    }
+    
+    
+    
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Perro{");
+        //sb.append("Perro{");
         sb.append("\n nombre=").append(nombre);
         sb.append("\n raza=").append(raza);
         sb.append("\n edad=").append(edad);
-        sb.append(" tamanio=").append(tamanio);
-        sb.append('}');
+        sb.append("\n tamaño=").append(tamanio);
+        //sb.append('}');
         return sb.toString();
     }
     

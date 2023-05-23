@@ -1,13 +1,15 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ *  Ahora se debe realizar unas mejoras al ejercicio de Perro y Persona. Nuestro programa va a
+    tener que contar con muchas personas y muchos perros. El programa deberá preguntarle a
+    cada persona, que perro según su nombre, quiere adoptar. Dos personas no pueden adoptar
+    al mismo perro, si la persona eligió un perro que ya estaba adoptado, se le debe informar a la
+    persona.
+    Una vez que la Persona elige el Perro se le asigna, al final deberemos mostrar todas las
+    personas con sus respectivos perros.
  */
 package extra_1;
 
-import Entidades.Perro;
-import Entidades.Persona;
-import java.util.ArrayList;
-import java.util.Scanner;
+import Servicios.ServPerrera;
 
 /**
  *
@@ -20,50 +22,46 @@ public class Extra_1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Scanner leer = new Scanner(System.in);
-        ArrayList<Persona> personas = new ArrayList<>();
-        ArrayList<Perro> perros = new ArrayList<>();
-        Perro perro1 = new Perro("Pintitas", "dalmata", 1, 0.80);
-        Perro perro2 = new Perro("Firulais", "chandosito", 2, 0.90);
-        Perro perro3 = new Perro("Lulo", "pitbull", 1, 1.20);
-        Perro perro4 = new Perro("Cosita", "poodle", 6, 0.80);
-        Perro perro5 = new Perro("Apolo", "labrador", 5, 0.80);
-        perros.add(perro1);
-        perros.add(perro2);
-        perros.add(perro3);
-        perros.add(perro4);
-        perros.add(perro5);
-
-        Persona persona1 = new Persona("Johan", "Lopez", 102345, new Perro());
-        Persona persona2 = new Persona("Camilo", "Huertas", 1023457, new Perro());
-        Persona persona3 = new Persona("Lina", "Ascanio", 1502345, new Perro());
-        Persona persona4 = new Persona("Alexis", "Castillo", 1672345, new Perro());
-        Persona persona5 = new Persona("Cristian", "Chikito", 182345, new Perro());
-        personas.add(persona1);
-        personas.add(persona2);
-        personas.add(persona3);
-        personas.add(persona4);
-        personas.add(persona5);
-
-        for (Persona persona : personas) {
-            System.out.println("" + persona);
-
-        }
         
-        System.out.println("--------Bienvenidos a la perrera municipal------- ");
-        System.out.println("La lista de perros disponibles para adopción son: ");
+        ServPerrera srv = new ServPerrera();
+        srv.adopcionPerros();
+        
+
+       
+
+        /*
+
+        1
+        System.out.println("------------------------------------------------");
+        System.out.println("¿Ingrese el nombre del perro que desea adoptar?");
+        
+        boolean adoptarP = false;
+        
         for (Perro perro : perros) {
-            System.out.println("" + perro);
+            String nperro = leer.next().toUpperCase();
+            if (nperro.equalsIgnoreCase(nperro)) {
+                System.out.println("El perro no esta disponible, elige otro");
+                adoptarP = true;
+                break;
+            }
             
         }
         
-        System.out.println("¿Que perro desea adoptar?" +  " S/N");
+        if (!adoptarP) {
+            boolean disponible = false;
+            for (Perro perro : perros) {
+                String nomP = leer.next().toUpperCase();
+                if (nomP.equalsIgnoreCase(nomP)) {
+                    adoptados.add(perro);
+                    int indexP = adoptados.indexOf(perro);
+                    
+                }
+            }
+        }
         
         
-        System.out.println("¿Ingrese el nombre del perro?" + " S/N");
-        String nperro = leer.next();
         System.out.println("Ingrese su nombre ");
-        String name = leer.next();
+        String name = leer.next().toLowerCase();
         for (Persona persona : personas) {
             if (persona.getNombre().equals(name)) {
                 for (Perro perro : perros) {
@@ -71,20 +69,18 @@ public class Extra_1 {
                         System.out.println("¡Felicidades! Has adoptado un perro"
                                 + "..." + perro.getNombre());
                         persona.setPerro(perro);
+                        
+                        
+                        
+                        
                     }
-                    
+
                 }
             }
-            
-            
-            
-        }
-        for (Persona persona : personas) {
-            System.out.println("" + persona);
-            
+
         }
         
-        
+        */
 
     }
 

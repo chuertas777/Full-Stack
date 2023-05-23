@@ -4,6 +4,8 @@
  */
 package Entidades;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author CamiloH
@@ -12,17 +14,18 @@ public class Persona {
 
     private String nombre, apellido;
     private int dni;
-    private Perro perro;
+    private ArrayList<Perro> perros = new ArrayList<>();
+    private ArrayList<Persona> personas = new ArrayList<>();
     
 
     public Persona() {
     }
 
-    public Persona(String nombre, String apellido, int dni, Perro perro) {
+    public Persona(String nombre, String apellido, int dni) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
-        this.perro = perro;
+        
     }
 
     public String getNombre() {
@@ -49,23 +52,37 @@ public class Persona {
         this.dni = dni;
     }
 
-    public Perro getPerro() {
-        return perro;
+    public ArrayList<Perro> getPerros() {
+        return perros;
     }
 
-    public void setPerro(Perro perro) {
-        this.perro = perro;
+    public void setPerros(Perro perro) {
+        this.perros.add(perro);
     }
+
+    
+
+    public ArrayList<Persona> getPersonas() {
+        return personas;
+    }
+
+    public void setPersonas(Persona persona) {
+        this.personas.add(persona);
+    }
+    
+    
+    
+    
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Persona{");
+    
         sb.append("\n nombre=").append(nombre);
         sb.append("\n apellido=").append(apellido);
         sb.append("\n dni=").append(dni);
-        sb.append("\n perro=").append(perro);
-        sb.append('}');
+        sb.append("\n perro=").append(perros);
+        
         return sb.toString();
     }
     
