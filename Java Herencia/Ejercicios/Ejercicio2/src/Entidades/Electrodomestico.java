@@ -5,7 +5,6 @@
 package Entidades;
 
 /**
- *
  * @author CamiloH
  */
 public class Electrodomestico {
@@ -14,7 +13,7 @@ public class Electrodomestico {
     protected String color;
     protected char consumo;
     protected double peso;
-    
+
     public Electrodomestico() {
     }
 
@@ -57,52 +56,14 @@ public class Electrodomestico {
         this.peso = peso;
     }
 
-    
-    public void comprobarConsumoEnergetico(char letra) {
-        char[] letras = {'A', 'B', 'C', 'D', 'E', 'F'};
-        boolean encontrado = false;
-
-        for (char m : letras) {
-            String letter = String.valueOf(letra);
-            String letter1 = String.valueOf(m);
-            if (letter.equalsIgnoreCase(letter1)) {
-                encontrado = true;
-            }
-        }
-
-        if (encontrado) {
-            this.consumo = letra;
-
-        } else {
-            this.consumo = 'F';
-
-        }
-
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Electrodomestico{");
+        sb.append("\nPrecio=").append(Precio);
+        sb.append("\n color='").append(color).append('\'');
+        sb.append("\n consumo=").append(consumo);
+        sb.append("\n peso=").append(peso);
+        sb.append('}');
+        return sb.toString();
     }
-
-    public void comprobarColor(String color) {
-        String[] colores = {"Blanco", "Negro", "Rojo", "Azul", "Gris"};
-        boolean encontrado = false;
-
-        for (String colore : colores) {
-            if (colore.equalsIgnoreCase(color)) {
-                encontrado = true;
-            }
-        }
-        if (encontrado) {
-            this.color = color;
-        } else {
-            this.color = "Blanco";
-        }
-
-    }
-
-    public void crearElectrodomestivo() {
-        
-    }
-
-    public void precioFinal() {
-
-    }
-
 }
