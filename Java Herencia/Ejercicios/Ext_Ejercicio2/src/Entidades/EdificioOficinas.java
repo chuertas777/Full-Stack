@@ -52,21 +52,24 @@ public class EdificioOficinas extends Edificio {
 
     @Override
     public void calcularSuperficie(double ancho, double largo) {
+        System.out.println("-------------------------------");
         System.out.println("La superficie del edificio de oficinas " + (ancho *
-                largo * npisos));
+                largo * npisos) + "m^2 ");
     }
 
     @Override
     public void calcularVolumen(double ancho, double largo, double alto) {
+        System.out.println("--------------------------------");
         System.out.println("El volumen del edificio de oficinas " + ancho *
-                largo * npisos);
+                largo * npisos + "m^3 ");
     }
 
     public void cantPersonas() {
-        System.out.println("En un piso entran " + cantpersonas * noficinas);
+        System.out.println("--------------------------------- ");
+        System.out.println("En un piso entran " + cantpersonas * noficinas + " personas");
+        System.out.println("-----------------------------------");
         System.out.println("En el edificio el total de personas son: " + cantpersonas
-                * noficinas * npisos);
+                * noficinas * npisos + "  ");
     }
-
 
 }

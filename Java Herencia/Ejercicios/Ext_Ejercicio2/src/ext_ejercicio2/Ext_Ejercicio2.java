@@ -31,18 +31,32 @@ public class Ext_Ejercicio2 {
         edificios.add(edi3);
         edificios.add(edi4);
 
+        int polideportivosTechados = 0;
+        int polideportivosNoTechado = 0;
+
         for (Edificio edificio : edificios) {
             edificio.calcularSuperficie(edificio.getAncho(), edificio.getLargo());
             edificio.calcularVolumen(edificio.getAncho(), edificio.getLargo(), edificio.getAlto());
 
+            if (edificio instanceof Polideportivo) {
+                Polideportivo poli = (Polideportivo) edificio;
+                if (poli.isEstado()) {
+                    polideportivosTechados++;
+
+                } else {
+                    polideportivosNoTechado++;
+                }
+
+            } else if (edificio instanceof EdificioOficinas) {
+                EdificioOficinas edificioDeOficinas = (EdificioOficinas) edificio;
+                edificioDeOficinas.cantPersonas();
+
+            }
+
         }
 
-        Polideportivo poli = new Polideportivo();
-        if (poli.isEstado()) {
-
-
-        }
-
+        System.out.println("Cantidad de polideportivos techados: " + polideportivosTechados);
+        System.out.println("Cantidad de polideportivos abiertos: " + polideportivosNoTechado);
 
     }
 
