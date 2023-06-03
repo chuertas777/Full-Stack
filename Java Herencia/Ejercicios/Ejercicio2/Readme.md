@@ -2,36 +2,37 @@
 
 Crear una superclase llamada Electrodoméstico con los siguientes atributos: precio, color,
 consumo energético (letras entre A y F) y peso.
-Los constructores que se deben implementar son los siguientes:
-• Un constructor vacío.
-• Un constructor con todos los atributos pasados por parámetro.
-Los métodos a implementar son:
-• Métodos getters y setters de todos los atributos.
+Los constructores que se deben implementar son los siguientes:</br>
+• Un constructor vacío.</br>
+• Un constructor con todos los atributos pasados por parámetro.</br>
+Los métodos a implementar son:</br>
+• Métodos getters y setters de todos los atributos.</br>
 • Método comprobarConsumoEnergetico(char letra): comprueba que la letra es correcta,
 sino es correcta usara la letra F por defecto. Este método se debe invocar al crear el
-objeto y no será visible.
+objeto y no será visible.</br>
 • Método comprobarColor(String color): comprueba que el color es correcto, y si no lo es,
 usa el color blanco por defecto. Los colores disponibles para los electrodomésticos son
 blanco, negro, rojo, azul y gris. No importa si el nombre está en mayúsculas o en
-minúsculas. Este método se invocará al crear el objeto y no será visible.
+minúsculas. Este método se invocará al crear el objeto y no será visible.</br>
 
 • Metodo crearElectrodomestico(): le pide la información al usuario y llena el
 electrodoméstico, también llama los métodos para comprobar el color y el consumo. Al
-precio se le da un valor base de $1000.
+precio se le da un valor base de $1000.</br>
 • Método precioFinal(): según el consumo energético y su tamaño, aumentará el valor del
-precio. Esta es la lista de precios:
+precio. </br> 
 
+Esta es la lista de precios:
 A continuación, se debe crear una subclase llamada Lavadora, con el atributo carga,
-además de los atributos heredados.
-Los constructores que se implementarán serán:
-• Un constructor vacío.
+además de los atributos heredados.</br>
+Los constructores que se implementarán serán:</br>
+• Un constructor vacío.</br>
 • Un constructor con la carga y el resto de los atributos heredados. Recuerda que debes
-llamar al constructor de la clase padre.
-Los métodos que se implementara serán:
-• Método get y set del atributo carga.
+llamar al constructor de la clase padre.</br>
+Los métodos que se implementara serán:</br>
+• Método get y set del atributo carga.</br>
 • Método crearLavadora (): este método llama a crearElectrodomestico() de la clase
 padre, lo utilizamos para llenar los atributos heredados del padre y después llenamos
-el atributo propio de la lavadora.
+el atributo propio de la lavadora.</br>
 • Método precioFinal(): este método será heredado y se le sumará la siguiente
 funcionalidad. Si tiene una carga mayor de 30 kg, aumentará el precio en $500, si la
 carga es menor o igual, no se incrementará el precio. Este método debe llamar al
@@ -39,18 +40,18 @@ método padre y añadir el código necesario. Recuerda que las condiciones que h
 visto en la clase Electrodoméstico también deben afectar al precio.
 Se debe crear también una subclase llamada Televisor con los siguientes atributos:
 resolución (en pulgadas) y sintonizador TDT (booleano), además de los atributos
-heredados.
-Los constructores que se implementarán serán:
-• Un constructor vacío.
+heredados.</br>
+Los constructores que se implementarán serán:</br>
+• Un constructor vacío.</br>
 • Un constructor con la resolución, sintonizador TDT y el resto de los atributos
-heredados. Recuerda que debes llamar al constructor de la clase padre.
-LETRA PRECIO
- A 	$1000
- B 	$800
- C 	$600
- D	$500
- E 	$300
- F 	$100
+heredados. Recuerda que debes llamar al constructor de la clase padre.</br>
+LETRA PRECIO</br>
+ A 	$1000</br>
+ B 	$800</br>
+ C 	$600</br>
+ D	$500</br>
+ E 	$300</br>
+ F 	$100</br>
 
 PESO PRECIO
 Entre 1 y 19 kg $100
