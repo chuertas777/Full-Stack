@@ -4,6 +4,7 @@
 package Servicios;
 
 import Entidades.Persona;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -21,17 +22,36 @@ public class ServPersona {
         O. Si no es correcto se deberá mostrar un mensaje   
      */
     public Persona crearPersona() {
+
         Persona per = new Persona();
+
         System.out.println("Ingrese su nombre: ");
         per.setNombre(leer.next());
         System.out.println("Ingrese su edad: ");
         per.setEdad(leer.nextInt());
-        System.out.println("Ingrese su tipo de genero 'H' Hombre 'M' Mujer o 'O' para otro: ");
-        per.setSexo(leer.next().toUpperCase());            
-        System.out.println("Ingrese su peso por ejemplo 80,5kg");
-        per.setPeso(leer.nextDouble());
-        System.out.println("Ingrese su estatura por ejemplo 1,75cm: ");
-        per.setAltura(leer.nextDouble());
+        try {
+
+            if (per.getEdad() == 0) {
+                System.out.println("No debe tener una edad en cero");
+                System.out.println("Ingrese su edad: ");
+                per.setEdad(leer.nextInt());
+
+            }
+        } catch (ArithmeticException ex) {
+            System.out.println("Verifique el valor");
+            
+
+            //per.setEdad(leer.nextInt());
+        } finally {
+           
+            System.out.println("Ingrese su tipo de genero 'H' Hombre 'M' Mujer o 'O' para otro: ");
+            per.setSexo(leer.next().toUpperCase());
+            System.out.println("Ingrese su peso por ejemplo 80,5kg");
+            per.setPeso(leer.nextDouble());
+            System.out.println("Ingrese su estatura por ejemplo 1,75cm: ");
+            per.setAltura(leer.nextDouble());
+
+        }
 
         return per;
 
@@ -61,19 +81,33 @@ public class ServPersona {
         }
 
     }
-    
+
     /*
          Método esMayorDeEdad(): indica si la persona es mayor de edad. La función
           devuelve un booleano.
-    */
-    public void esMayorDeEdad(Persona mayor){
+     */
+    public void esMayorDeEdad(Persona mayor) {
         boolean mayoria;
-        if(mayor.getEdad() >= 18){
+
+        if (mayor.getEdad() >= 18) {
             System.out.println("Es una persona mayor de edad ");
             mayoria = true;
         }
-    
+        /*
+        
+        if (mayor.getEdad() == 0) {
+            throw new ArithmeticException("La edad no puede ser cero ");
+        }
+        if (mayor.getEdad() > 120) {
+            throw new ArithmeticException("No existe una persona tan longeva");
+
+        }
+        if (mayor.getEdad() < 0) {
+            throw new ArithmeticException("La Edad no puede tener valores negativos ");
+
+        }
+         */
+
     }
-    
 
 }

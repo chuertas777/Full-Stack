@@ -25,6 +25,11 @@ public class Ejercicio7 {
         Persona p1 = per.crearPersona();
         per.calcularIMC(p1);
         
+        Persona p2 = per.crearPersona();
+        per.esMayorDeEdad(p2);
+        
+        
+        
         
     }
     
