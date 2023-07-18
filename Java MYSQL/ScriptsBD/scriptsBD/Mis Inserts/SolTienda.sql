@@ -1,21 +1,29 @@
 #A continuación, se deben realizar las siguientes consultas sobre la base de datos:
 use tienda;
 #1. Lista el nombre de todos los productos que hay en la tabla producto.
-SELECT nombre FROM producto;
+SELECT nombre 
+FROM producto;
 #2. Lista los nombres y los precios de todos los productos de la tabla producto.
-SELECT nombre, precio FROM producto;
+SELECT nombre, precio 
+FROM producto;
 #3. Lista todas las columnas de la tabla producto.
-SELECT * FROM producto;
+SELECT * 
+FROM producto;
 #4. Lista los nombres y los precios de todos los productos de la tabla producto, redondeando 
 #el valor del precio.
-SELECT nombre, round(precio) FROM producto;
+SELECT nombre, round(precio) 
+FROM producto;
 #5. Lista el código de los fabricantes que tienen productos en la tabla producto.
-SELECT codigo_fabricante FROM producto where nombre <> '';
+SELECT codigo_fabricante 
+FROM producto where nombre <> '';
 #6. Lista el código de los fabricantes que tienen productos en la tabla producto, sin mostrar 
 #los repetidos.
-SELECT distinct codigo_fabricante from producto; 
+SELECT distinct codigo_fabricante 
+from producto; 
 #7. Lista los nombres de los fabricantes ordenados de forma ascendente.
-SELECT nombre FROM fabricante order by nombre asc;
+SELECT nombre 
+FROM fabricante 
+order by nombre asc;
 #8. Lista los nombres de los productos ordenados en primer lugar por el nombre de forma 
 #ascendente y en segundo lugar por el precio de forma descendente.
 SELECT nombre, precio from producto order by nombre asc, precio desc;
