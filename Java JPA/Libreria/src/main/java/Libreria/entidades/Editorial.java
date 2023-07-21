@@ -17,7 +17,7 @@ import javax.persistence.Id;
 @Entity
 public class Editorial implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombre;
     private boolean alta = true;
@@ -53,6 +53,19 @@ public class Editorial implements Serializable {
     public void setAlta(boolean alta) {
         this.alta = alta;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n");
+        sb.append("------------------------------------------------").append("\n");
+        sb.append("-------------------Editorial--------------------").append("\n");
+        sb.append("Id: ").append(id).append("\n");
+        sb.append("Nombre: ").append(nombre).append("\n");
+        sb.append("Alta: ").append(alta).append("\n");
+        return sb.toString();
+    }
+    
     
     
     

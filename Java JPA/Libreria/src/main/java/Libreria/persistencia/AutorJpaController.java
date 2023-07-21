@@ -14,6 +14,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.Persistence;
+import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
@@ -23,15 +24,16 @@ import javax.persistence.criteria.Root;
  */
 public class AutorJpaController implements Serializable {
 
+    private EntityManager em;
+
     public AutorJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
-    
-    public AutorJpaController(){
+
+    public AutorJpaController() {
         emf = Persistence.createEntityManagerFactory("LibreriaJPAUP");
     }
-    
-    
+
     private EntityManagerFactory emf = null;
 
     public EntityManager getEntityManager() {
@@ -39,7 +41,7 @@ public class AutorJpaController implements Serializable {
     }
 
     public void create(Autor autor) throws PreexistingEntityException, Exception {
-        EntityManager em = null;
+        em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
@@ -58,7 +60,7 @@ public class AutorJpaController implements Serializable {
     }
 
     public void edit(Autor autor) throws NonexistentEntityException, Exception {
-        EntityManager em = null;
+        em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
@@ -80,8 +82,33 @@ public class AutorJpaController implements Serializable {
         }
     }
 
+    //Persistencia para editar un autor por ID
+    public void editAutorById(int id, String nombre) throws NonexistentEntityException, Exception {
+        em = null;
+        try {
+            em = getEntityManager();
+            Autor autor = em.find(Autor.class, id);
+            if (autor == null) {
+                throw new NonexistentEntityException("El autor con el id " + id
+                        + " no existe en la BD Libreria.");
+            }
+
+            em.getTransaction().begin();
+            autor.setNombre(nombre);
+
+            // Actualiza otros atributos según sea necesario
+            em.getTransaction().commit();
+        } catch (Exception ex) {
+            throw ex;
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+    }
+
     public void destroy(int id) throws NonexistentEntityException {
-        EntityManager em = null;
+        em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
@@ -110,7 +137,7 @@ public class AutorJpaController implements Serializable {
     }
 
     private List<Autor> findAutorEntities(boolean all, int maxResults, int firstResult) {
-        EntityManager em = getEntityManager();
+        em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
             cq.select(cq.from(Autor.class));
@@ -126,7 +153,7 @@ public class AutorJpaController implements Serializable {
     }
 
     public Autor findAutor(int id) {
-        EntityManager em = getEntityManager();
+        em = getEntityManager();
         try {
             return em.find(Autor.class, id);
         } finally {
@@ -134,8 +161,26 @@ public class AutorJpaController implements Serializable {
         }
     }
 
+    //Consultar por nombre del autor
+    public List<Autor> findAutorName(String name) {
+        em = getEntityManager();
+        try {
+            CriteriaBuilder cb = em.getCriteriaBuilder();
+            CriteriaQuery<Autor> cq = cb.createQuery(Autor.class);
+            Root<Autor> autorRoot = cq.from(Autor.class);
+            cq.select(autorRoot);
+            cq.where(cb.equal(autorRoot.get("nombre"), name));
+
+            Query q = em.createQuery(cq);
+            return q.getResultList();
+
+        } finally {
+            em.close();
+        }
+    }
+
     public int getAutorCount() {
-        EntityManager em = getEntityManager();
+        em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
             Root<Autor> rt = cq.from(Autor.class);
@@ -146,5 +191,5 @@ public class AutorJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

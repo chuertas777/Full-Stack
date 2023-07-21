@@ -6,9 +6,9 @@ package Libreria.entidades;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -16,8 +16,8 @@ import javax.persistence.Id;
  */
 @Entity
 public class Libro implements Serializable {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long isbn;
     private String titulo;
     private int anio;
@@ -25,10 +25,11 @@ public class Libro implements Serializable {
     private int ejemplaresPrestados;
     private int ejemplaresRestantes;
     private boolean alta = true;
+    @ManyToOne
     Autor autor;
+    @OneToOne
     Editorial editorial;
-    
-    
+
     public Libro() {
     }
 
@@ -115,10 +116,24 @@ public class Libro implements Serializable {
         this.editorial = editorial;
     }
 
-    
-    
-    
-    
-    
-    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n");
+        sb.append("--------------------- Libro --------------------- ").append("\n");
+        sb.append("ISBN: ").append(isbn).append("\n");
+        sb.append("Titulo: ").append(titulo).append("\n");
+        sb.append("Año de publicación: ").append(anio).append("\n");
+        sb.append("Número de ejemplares: ").append(ejemplares).append("\n");
+        sb.append("Número de ejemplares Prestados: ").append(ejemplaresPrestados).append("\n");
+        sb.append("Número de ejemplares Restantes: ").append(ejemplaresRestantes).append("\n");
+        sb.append("Alta: ").append(alta).append("\n");
+        sb.append("\n");
+        sb.append("------------------------------------------------").append("\n");
+        sb.append("ID autor: ").append(autor).append("\n");
+        sb.append("------------------------------------------------").append("\n");
+        sb.append("ID editorial: ").append(editorial).append("\n");
+        return sb.toString();
+    }
+
 }
