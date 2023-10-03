@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace= "/fragments/head :: head "></head>
+    <body>
+        <!-- Nav -->
+        <nav th:replace= "/fragments/navbar"></nav>
+        <!-- Fin Nav -->
+
+        <!-- Formulario -->
+        <div class="container-fluid m-5 contenedor">
+            <!-- Vincular la llave del getMapping de modificar -->
+            <form class="formulario" th:action="@{/libro/eliminar/__${libro.isbn}__}" method="POST">
+                <input hidden th:value="${isbn}" name="isbn">
+                <div class="form-group my-3">
+                    <label class="mb-2">Libro Seleccionado</label> 
+                    <input th:value="${libro.title}" type="text" class="form-control" name="title" disabled="true">
+                    <input th:value="${libro.copies}" type="text" class="form-control" name="copies" disabled="true">
+                    <input th:value="${libro.registration}" type="text" class="form-control" name="copies" disabled="true">
+                    <input th:value="${libro.Author.name}" type="text" class="form-control" name="copies" disabled="true">
+                    <input th:value="${libro.Editorial.name}" type="text" class="form-control" name="copies" disabled="true">
+                </div>
+                <button type="submit" class="btn btn-primary mt-3 botones">Eliminar</button>
+            </form>
+            <div th:if="${exito}!=null" class="card text-white bg-success mb-3 mt-3 mensajeExito" >
+                <div class="card-body">
+                    <h5 class="card-title">Exito 👍</h5>
+                    <p class="card-text" th:text="${exito}"></p>
+                </div>
+            </div>
+            <div th:if="${error}!=null" class="card text-white bg-danger mb-3 mensajeError" >
+                <div class="card-body">
+                    <h5 class="card-title">Error 👎</h5>
+                    <p class="card-text" th:text="${error}"></p>
+                </div>
+            </div>
+            <section class=" text-center container">
+                <div class="row mt-3">
+                    <div class="divVolver">
+                        <a th:href="@{/inicio}" class="btn btn-secondary my-2 botonVolver botones">Volver</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- Fin Formulario -->
+
+        <!-- Footer -->
+        <footer th:replace= "/fragments/footer :: footer"></footer>
+        <!-- Fin Footer -->
+        <script th:replace= "/fragments/scripts :: script"></script>
+    </body>
+</html> 

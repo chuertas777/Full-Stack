@@ -1,10 +1,10 @@
-/* Fuente Roboto */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap");
+/* Fuente Monserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 
 /* Variables Inicio */
 :root{
---font-family:"Robot", sans-serif;
+--font-family:"Roboto", sans-serif;
 --normal-font:400;
 --bold-font:700;
 --bolder-font:900;
@@ -102,4 +102,80 @@ html {
     background-color: transparent;
     cursor: pointer;
     display: none;
+  }
+
+  /*Sección Hero */
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    max-width: 68.75rem;
+    margin: auto;
+  }
+
+  .hero img {
+    height: 37.5rem;
+    width: 37.5rem;
+  }
+  
+  .bio {
+    width: 25rem;
+    padding: 0.625rem;
+    border-radius: 6px;
+    box-shadow: 0px 2px 15px 2px var(--primary-shadow);
+  }
+  
+  .bio h1 {
+    margin-bottom: var(--bottom-margin);
+  }
+  
+  .bio p {
+    line-height: var(--line-height);
+    padding: 0.3rem 0;
+  }
+
+  /*Sección más sobre mí */
+  .more-about {
+    background-color: var(--bg-color);
+    padding: 1rem 6rem;
+  }
+  
+  .more-about h2 {
+    margin-bottom: var(--bottom-margin);
+    text-align: center;
+  }
+  
+  .more-about p {
+    line-height: var(--line-height);
+    padding: 0.4rem;
+  }
+
+  /*Sección habilidades  */
+  .skills {
+    max-width: 68.75rem;
+    margin: auto;
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+  
+  .header-skills {
+    margin-bottom: 1rem;
+  }
+  
+  .wrapper-skills img {
+    padding: 1.25rem;
+  }
+  
+  .icon {
+    width: 11.875rem;
+    height: 11.25rem;
+  }
+
+  .icon-card {
+    background-color: #fff;
+    border-radius: 11px;
+    box-shadow: 0 3px 10px var(--secondary-shadow);
+    padding: 20px;
+    margin: 10px;
   }

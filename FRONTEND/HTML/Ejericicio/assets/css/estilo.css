@@ -1,0 +1,48 @@
+/*
+
+body {
+  background-color: black;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: aliceblue;
+}
+
+h2 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: center;
+  color: blue;
+}
+
+p {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: brown;
+  text-align: left;
+}
+
+/*Seudo Clases
+a:link {
+  color: red;
+}
+
+a:visited {
+  color: #ccc;
+}
+
+a:hover {
+  color: #cc0000;
+}
+
+a:active {
+  color: white;
+}
+
+*/
+
+#txtUsuario {
+  color: #cc0000;
+}
+
+

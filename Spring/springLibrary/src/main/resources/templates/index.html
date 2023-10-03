@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+    <head th:replace= "/fragments/head :: head"></head>
+    <body>
+        <nav th:replace= "/fragments/navbar :: nav"></nav>
+        
+         <div th:if="${exito}!=null" class="card text-white bg-success mb-3 mt-3 mensajeExito" >
+            <div class="card-body">
+                <h5 class="card-title">Exito</h5>
+                <p class="card-text" th:text="${exito}"></p>
+            </div>
+        </div>
+        <div th:if="${error}!=null" class="card text-white bg-danger mb-3 mensajeError" >
+            <div class="card-body">
+                <h5 class="card-title">Error ð</h5>
+                <p class="card-text" th:text="${error}"></p>
+            </div>
+        </div>
+        <header class="header">
+            <section class="contenedorMain">
+                <div class="tituloBiblioteca">
+                    <a class="navbar-brand" sec:authorize="hasRole('ADMIN')" href="/libro/registrar">BIBLIOTECA EGG</a>
+                </div>
+                <div class="container contenedorLibros">
+                    <p class="tituloLibros"  th:text=" 'Hola de vuelta ' "></p>
+
+                </div>
+                <div class="bg-circle-1 bg-circle"></div>
+                <div class="bg-circle-2 bg-circle"></div>
+                <div class="bg-circle-3 bg-circle"></div>
+                <div class="bg-circle-4 bg-circle"></div>
+            </section>
+        </header>
+
+        <footer th:replace= "/fragments/footer :: footer"></footer>
+
+
+
+        <!-- JavaScript Bundle with Popper -->
+        <script th:replace= "/fragments/scripts :: script"></script>
+    </body>
+
+</html>

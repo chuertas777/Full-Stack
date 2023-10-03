@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head th:replace= "/fragments/head :: head "></head>
+
+    <body>
+        <!-- Nav -->
+        <nav th:replace="/fragments/navbar :: nav"></nav>
+        <!-- Fin Nav -->
+
+        <!-- Formulario -->
+        <div class="container m-5" >
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">ISBN</th>
+                        <th scope="col">Título Libro</th>
+                        <th scope="col">Ejemplares</th>
+                        <th scope="col">Fecha de registro</th>
+                        <th scope="col">Autor</th>
+                        <th scope="col">Editorial</th>
+                        <th scope="col" sec:authorize="hasRole('ADMIN')">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody th:each="Book : ${libros}"> 
+                    <tr>
+                        <th scope="row" th:text="${Book.isbn}"></th>
+                        <td th:text="${Book.title}"></td>
+                        <td th:text="${Book.copies}"></td>
+                        <td th:text="${Book.registration}"></td>
+                        <td th:text="${Book.Author.name}"></td>
+                        <td th:text="${Book.Editorial.name}"></td>
+                        <td>
+                            <a sec:authorize="hasRole('ADMIN')" th:href= "@{/libro/eliminar/__${Book.isbn}__}"><i class="fas fa-feather-alt">  </i> Eliminar </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- Mensajes  -->
+            <div th:if="${exito}!=null" class="card text-white bg-success mb-3 mt-3 mensajeExito" >
+                <div class="card-body">
+                    <h5 class="card-title">Exito ð</h5>
+                    <p class="card-text" th:text="${exito}"></p>
+                </div>
+            </div>
+            <div th:if="${error}!=null" class="card text-white bg-danger mb-3 mensajeError" >
+                <div class="card-body">
+                    <h5 class="card-title">Error ð</h5>
+                    <p class="card-text" th:text="${error}"></p>
+                </div>
+            </div>
+            <!-- Fin Mensajes  -->
+            
+            <section class="py-5 text-center container">
+                <div class="row py-lg-5">
+                    <div class="col-lg-6 col-md-8 mx-auto">
+                        <a th:href="@{/inicio}" class="btn btn-primary my-2">Volver</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <!-- Fin Formulario -->
+
+        <footer th:replace= "/fragments/footer :: footer"></footer>
+
+
+
+       <script th:replace= "/fragments/scripts :: script"></script>
+    </body>
+
+</html>

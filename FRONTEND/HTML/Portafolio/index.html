@@ -1,40 +1,130 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Estilos css -->
     <link rel="stylesheet" href="assets/css/styles.css" />
 
     <!--Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/icons/favicon-32x32.png"
+    />
     <!-- Animaciones CSS CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <!-- Titulo -->
     <title>Camilo Huertas | FullStack Developer</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Barra de Navegación -->
     <nav>
-        <h1>CAMILO HUERTAS</h1>
-        <ul class="navegacion">
-          <li><a href="#sobremi" class="nav-link">Acerca de Mí</a></li>
-          <li><a href="#habilidaes" class="nav-link">Habilidades</a></li>
-          <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
-          <li><a href="#contacto" class="nav-link">Contacto</a></li>
-        </ul>
-        <button class="menu-hamburguesa" id="menu-hamburguesa">
-          <ion-icon class="barras" name="menu-outline"></ion-icon>
-        </button>
+      <h1>CAMILO HUERTAS</h1>
+      <ul class="navegacion">
+        <li><a href="#sobremi" class="nav-link">Acerca de Mí</a></li>
+        <li><a href="#habilidaes" class="nav-link">Habilidades</a></li>
+        <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+      <button class="menu-hamburguesa" id="menu-hamburguesa">
+        <ion-icon class="barras" name="menu-outline"></ion-icon>
+      </button>
     </nav>
     <!-- Sección Hero  -->
-
+    <section class="hero" id="about">
+      <img
+        src="assets/images/wfh_1.svg"
+        alt="jane-doe"
+        loading="lazy"
+        class="hero-img"
+      />
+      <div class="bio animate__animated animate__shakeX">
+        <h2 class="bio-titulo">Sobre Mí</h2>
+        <p class="bio-texto">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia sed
+          dolorem fugit sapiente porro veniam pariatur dolore nostrum delectus
+          inventore tempore minus nemo, iste ullam illo laboriosam maiores
+          repudiandae quos!
+        </p>
+      </div>
+    </section>
     <!-- Sobre Mí -->
+    <section class="more-about">
+      <h2>Más sobre mí</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
+        nesciunt excepturi quos obcaecati incidunt voluptatem ipsam sunt ipsum,
+        autem deleniti cupiditate molestias quis unde quae totam porro dicta
+        iure animi inventore, veniam hic! Omnis nulla, delectus a voluptatibus
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
+        nostrum dolor minus, libero delectus praesentium perferendis
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
+        consequuntur labore? Ea totam voluptas amet!
+      </p>
+    </section>
 
     <!-- Sección Habilidades -->
+    <section class="skills" id="habilidades">
+      <h2 class="header-skills">Mis mejores habilidades</h2>
 
+      <div class="wrapper-skills">
+        <div class="first-set animate__animated animate__pulse">
+          <img
+            src="assets/icons/icons8-html-5.svg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+          <img
+            src="assets/icons/icons8-css3.svg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+          <img
+            src="assets/icons/icons8-javascript.svg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+        </div>
+        <div class="second-set animate__animated animate__pulse">
+          <img
+            src="assets/icons/icons8-bootstrap.svg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+          <img
+            src="assets/icons/icons8-react-native.svg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+          <img
+            src="assets/icons/icons8-git.svg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+        </div>
+      </div>
+    </section>
     <!-- Sección Proyectos -->
 
     <!-- Sección Contacto-->
@@ -49,7 +139,13 @@
     <script src="assets/js/app.js"></script>
 
     <!-- Ion icons scripts -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" ></script>    
-</body>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>

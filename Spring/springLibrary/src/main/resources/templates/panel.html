@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head th:replace= "/fragments/head :: head" ></head>
+
+    <body>
+        <!-- Nav -->
+        <nav th:replace= "/fragments/navbar :: nav"></nav>
+        <!-- Fin Nav -->
+
+        <!-- Header -->
+        <header class="header">
+            <section class="contenedorMain">
+                <div class="tituloBiblioteca">
+                    <a class="navbar-brand" href="#">BIBLIOTECA EGG</a>
+                </div>
+                <div class="container contenedorLibros">
+                    <p class="tituloLibros" 
+                       th:if="${session.usuariosesion != null}" 
+                       th:text=" 'Hola de vuelta ' + ${session.usuariosesion.nombre}" ></p>
+                    <a class="btn btn-xl mt-2 boton">Ver Listado</a>
+                </div>
+                <div class="bg-circle-1 bg-circle"></div>
+                <div class="bg-circle-2 bg-circle"></div>
+                <div class="bg-circle-3 bg-circle"></div>
+                <div class="bg-circle-4 bg-circle"></div>
+            </section>
+        </header>
+        <!-- Fin Header -->
+        <!-- Footer -->
+        <footer th:replace= "/fragments/footer :: footer"></footer>
+        <!-- Fin Footer -->
+
+        <!-- JavaScript Bundle with Popper -->
+        <script th:replace= "/fragments/scripts :: script"></script>
+
+    </body>
+
+</html>
