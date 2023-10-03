@@ -44,7 +44,7 @@
         <!-- Fin Mensajes -->
         
         <!-- Formulario -->
-            <form class="formulario" th:action="@{/logincheck}" method="POST">
+            <form class="formulario"  th:action="@{/logincheck}" method="POST">
 
 
                 <div class="form-group my-3">
@@ -67,7 +67,7 @@
             <section class=" text-center container">
                 <div class="row mt-3">
                     <div class="divVolver">
-                        <a th:href="@{/}" class="btn btn-secondary my-2 botonVolver botones">Volver</a>
+                        <a th:if="${session.usuariosesion != null}" href="/" class="btn btn-secondary my-2 botonVolver botones">Volver</a>
                     </div>
                 </div>
             </section>

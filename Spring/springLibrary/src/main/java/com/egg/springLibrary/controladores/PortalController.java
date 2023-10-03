@@ -82,6 +82,7 @@ public class PortalController {
         return "inicio.html";
     }
     
+    //Ingresar al perfil de usuario
     @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
     @GetMapping("/perfil")
     public String perfil(ModelMap modelo,HttpSession session){
@@ -90,14 +91,16 @@ public class PortalController {
         return "usuario_modificar.html";
     }
     
-     @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
-    @GetMapping("/perfil/{id}")
+    //Editar o actualizar el perfil usuario 
+    @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
+    @PostMapping("/perfil/{id}")
     public String actualizar(MultipartFile archivo, @PathVariable String id, 
-          @RequestParam String nombre,@RequestParam String email, ModelMap modelo){
+          @RequestParam String nombre,@RequestParam String email, 
+          @RequestParam String password, @RequestParam String password2, ModelMap modelo){
         
         try{
             usuarioServicio.actualizar(archivo, 
-                    email, nombre, email, nombre, nombre);
+                    id, nombre, email, password, password2);
             modelo.put("exito", "Usuario actualizado correctamente!");
             return "inicio.html";
             
@@ -105,6 +108,7 @@ public class PortalController {
             modelo.put("error", ex.getMessage());
             modelo.put("nombre", nombre);
             modelo.put("email", email);
+            
         }
         
         

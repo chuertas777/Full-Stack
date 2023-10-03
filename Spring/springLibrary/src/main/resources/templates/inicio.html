@@ -5,6 +5,20 @@
         <!-- Nav -->
         <nav th:replace= "/fragments/navbar :: nav"></nav>
         <!-- Fin Nav -->
+         <!-- Mensajes -->
+        <div th:if="${error != null}" class="card text-white bg-danger mb-3 mensajeError" >
+            <div class="card-body">
+                <h5 class="card-title">Error 👎</h5>
+                <p class="card-text" th:text="${error}"></p>
+            </div>
+        </div>
+        <div th:if="${exito != null}" class="card text-white bg-success mb-3 mt-3 mensajeExito" >
+            <div class="card-body">
+                <h5 class="card-title">Exito!</h5>
+                <p class="card-text" th:text="${exito}"></p>
+            </div>
+        </div>
+        <!-- Fin Mensajes -->
         <!-- Header -->
         <header class="header">
             <section class="contenedorMain">
@@ -17,8 +31,8 @@
                     <a class="btn btn-xl mt-2 boton">Ver Listado</a>
                 </div>
                 <div class="container">
-                    <a  class="d-flex align-items-center">
-                        <img class="logo"  >
+                    <a th:if="${session.usuariosesion.imagen != null}" class="d-flex align-items-center">
+                        <img class="logo"  th:src="@{/imagen/perfil/__${session.usuariosesion.id}__}" >
                     </a>
                 </div>
                 <div class="bg-circle-1 bg-circle"></div>
@@ -28,6 +42,7 @@
             </section>
         </header>
         <!-- Fin Header -->
+       
         <footer th:replace= "/fragments/footer :: footer"></footer>
 
         <!-- JavaScript Bundle with Popper -->
