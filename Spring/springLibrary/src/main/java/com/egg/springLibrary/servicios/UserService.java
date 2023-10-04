@@ -9,7 +9,6 @@ import com.egg.springLibrary.entidades.Usuario;
 import com.egg.springLibrary.enumeraciones.Rol;
 import com.egg.springLibrary.excepciones.MyException;
 import com.egg.springLibrary.repositorios.UserRepository;
-import com.egg.springLibrary.servicios.ImageService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -81,21 +80,51 @@ public class UserService implements UserDetailsService {
             String idImagen = null;
             if (usuario.getImagen() != null) {
                 idImagen = usuario.getImagen().getId();
-                
+
             }
-            
+
             Image imagen = imagenServicio.actualizar(archivo, idImagen);
             usuario.setImagen(imagen);
             usuarioRepositorio.save(usuario);
         }
 
     }
-    
+
     //Captura el id del Usuario 
     public Usuario getOne(String id) {
         return usuarioRepositorio.getOne(id);
     }
 
+    //Listar todos los usuarios
+    @Transactional
+    public List<Usuario> listarUsuarios() {
+        List<Usuario> usuarios = new ArrayList();
+
+        usuarios = usuarioRepositorio.findAll();
+        //Metodo propio del jpaRepo es traer todos los datos de la tabla con el ".findAll()"
+        return usuarios;
+    }
+
+    //Cambiar o modificar Rol del usuario
+    @Transactional
+    public void cambiarRol(String id) {
+        Optional<Usuario> respuesta = usuarioRepositorio.findById(id);
+
+        if (respuesta.isPresent()) {
+
+            Usuario usuario = respuesta.get();
+
+            if (usuario.getRol().equals(Rol.USER)) {
+
+                usuario.setRol(Rol.ADMIN);
+
+            } else if (usuario.getRol().equals(Rol.ADMIN)) {
+                usuario.setRol(Rol.USER);
+            }
+        }
+    }
+
+    //Http Sesion de usuario 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 

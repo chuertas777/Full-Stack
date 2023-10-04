@@ -49,14 +49,21 @@ public class BookController {
         return "libro_form.html";
     }
 
+    //Registrar libros 
     @PostMapping("/registro")
-    public String registro(@RequestParam(required = false) Long isbn, @RequestParam String titulo,
-            @RequestParam(required = false) Integer copias, @RequestParam String idautor,
+    public String registro(@RequestParam(required = false) Long isbn,
+            @RequestParam String titulo,
+            @RequestParam(required = false) Integer copias,
+            @RequestParam String idautor,
             @RequestParam String ideditorial, ModelMap modelo) {
         try {
             //System.out.println("Nombre: " + nombre);
-            libroServicio.createBook(isbn,
-                    titulo, copias, idautor, ideditorial);
+            libroServicio.createBook(
+                    isbn,
+                    titulo,
+                    copias,
+                    idautor,
+                    ideditorial);
             modelo.put("exito", "El libro fue guardado en la Base de Datos");
         } catch (MyException ex) {
             List<Author> autores = autorServicio.listAllAuthors();
@@ -70,24 +77,24 @@ public class BookController {
         return "index.html";
 
     }
-    
+
     @GetMapping("/lista")
     public String listar(ModelMap modelo) {
         List<Book> libros = libroServicio.listAllBooks();
         modelo.addAttribute("libros", libros);
         return "libro_list.html";
     }
-    
+
     //Traer el id señalado a eliminar
     @GetMapping("/eliminar/{isbn}")
-    public String eliminar(@PathVariable Long isbn, ModelMap modelo){
+    public String eliminar(@PathVariable Long isbn, ModelMap modelo) {
         modelo.put("libro", libroServicio.getOne(isbn));
         return "libro_eliminar.html";
     }
-    
-     //Realizar la eliminacion del isbn previamente seleccionado 
+
+    //Realizar la eliminacion del isbn previamente seleccionado 
     @PostMapping("/eliminar/{isbn}")
-    public String eliminado(@PathVariable Long isbn, ModelMap modelo){
+    public String eliminado(@PathVariable Long isbn, ModelMap modelo) {
         try {
             libroServicio.eliminarLibro(isbn);
             modelo.put("exito", "Se ha eliminado el libro seleccionado");
@@ -96,8 +103,43 @@ public class BookController {
             modelo.put("error", "No se ha realizado ningún cambio");
             return "libro_eliminar.html";
         }
-        
+
     }
-    
+
+    //Traer el id señalado a modificar
+    @GetMapping("/modificar/{isbn}")
+    public String modificar(@PathVariable Long isbn, ModelMap modelo) {
+        modelo.put("libro", libroServicio.getOne(isbn));
+        
+        List<Author> autores = autorServicio.listAllAuthors();
+        List<Editorial> editoriales = editorialServicio.listAllEditorials();
+        modelo.addAttribute("autores", autores);
+        modelo.addAttribute("editoriales", editoriales);
+        
+        return "libro_modificar.html";
+    }
+
+    //Realizar la modificación al id previamente seleccionado 
+    @PostMapping("/modificar/{isbn}")
+    public String modificarLibro(@RequestParam Long isbn, @RequestParam String title,
+           @RequestParam String idautor, @RequestParam String ideditorial,
+            @RequestParam Integer copies, ModelMap modelo) {
+        try {
+            libroServicio.updateOnlyOneBook(
+                    isbn,
+                    title,
+                    idautor,
+                    ideditorial,
+                    copies);
+
+            modelo.put("exito", "Se ha modificado el libro correctamente");
+            return "redirect:../lista";
+        } catch (MyException ex) {
+
+             modelo.put("error", ex.getMessage());
+            return "libro_modificar.html";
+        }
+
+    }
 
 }

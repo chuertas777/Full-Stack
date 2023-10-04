@@ -20,13 +20,13 @@
                     <input type="email" class="form-control" name="email"  th:value="${usuario.email}">
                 </div>
                 <div class="form-group my-3">
-                    <input type="file" class="form-control" name="archivo" >
+                    <input type="file" class="form-control" name="archivo" th:value="${usuario.imagen.nombre}" >
                 </div>
                 <div class="form-group my-3">
-                    <input type="password" class="form-control" name="password" placeholder="PASSWORD">
+                    <input type="password" class="form-control" name="password" th:value="${usuario.password}" placeholder="PASSWORD">
                 </div>
                 <div class="form-group my-3">
-                    <input type="password" class="form-control" name="password2" placeholder="REPETIR PASSWORD" >
+                    <input type="password" class="form-control" name="password2" th:value="${usuario.password}" placeholder="REPETIR PASSWORD" >
                 </div>
                 <button type="submit" class="btn btn-primary mt-3 botones">Actualizar</button>
             </form>

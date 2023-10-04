@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace= "/fragments/head :: head"></head>
+    <body>
+        <!-- Nav -->
+        <nav th:replace= "/fragments/navbar :: nav"></nav>
+        <!-- Fin Nav -->
+
+        <!-- Formulario -->
+        <div class="container-fluid m-5 contenedor">
+
+            <form class="formulario" th:action="@{/libro/modificar/__${libro.isbn}__}" method="POST" enctype="multipart/form-data">
+                
+                <div th:if="${error != null}" class="card text-white bg-danger mb-3 mensajeError" >
+                    <div class="card-body">
+                        <h5 class="card-title">Error 👎</h5>
+                        <p class="card-text" th:text="${error}"></p>
+                    </div>
+                </div>
+                <div th:if="${exito != null}" class="card text-white bg-success mb-3 mt-3 mensajeExito" >
+                    <div class="card-body">
+                        <h5 class="card-title">Exito!</h5>
+                        <p class="card-text" th:text="${exito}"></p>
+                    </div>
+                </div>
+
+                <div class="form-group my-3">
+                    <label class="mb-2">ISBN</label> 
+                    <input type="number" class="form-control" name="isbn" th:value="${libro.isbn}">
+                </div>
+                <div class="form-group my-3">
+                    <label class="mb-2">Título</label> 
+                    <input type="text" class="form-control" name="title" th:value="${libro.title}">
+                </div>
+
+                <div class="form-group my-3">
+                    <label class="mb-2"># de Ejemplares</label> 
+                    <input type="number" class="form-control" name="copies" th:value="${libro.copies}">
+                </div>
+                
+                <!-- <div class="form-group my-3">
+                    <input type="file" class="form-control" name="archivo">
+                </div> -->
+                
+                <div class="form-group my-3">
+                    <label class="mb-2">Seleccionar Autor </label><br/> 
+                    <select name="idautor">  
+                        <!-- Relacionamos la entidad Author  -->
+                        <option th:each="Author : ${autores}"
+                                th:value="${Author.id}"
+                                th:text="${Author.name}"
+                                />
+                    </select>
+                </div>
+                <div class="form-group my-3">
+                    <label class="mb-2">Seleccionar Editorial </label><br/> 
+                    <select name="ideditorial">  
+                        <!-- Relacionamos la entidad Editorial  -->
+                        <option th:each="Editorial : ${editoriales}"
+                                th:value="${Editorial.id}" 
+                                th:text="${Editorial.name}"
+                                />
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-3 botones">Guardar</button>
+            </form>
+
+
+            <section class=" text-center container">
+                <div class="row mt-3">
+                    <div class="divVolver">
+                        <a th:href="@{/inicio}" class="btn btn-secondary my-2 botonVolver botones">Volver</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- Fin Formulario -->
+        
+        <!-- Footer -->
+        <footer th:replace= "/fragments/footer :: footer"></footer>
+        <!-- Fin Footer -->
+
+       <script th:replace= "/fragments/scripts :: script"></script>
+    </body>
+</html>

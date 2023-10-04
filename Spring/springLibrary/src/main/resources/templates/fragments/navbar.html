@@ -17,7 +17,7 @@
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a sec:authorize="hasRole('ADMIN')" class="dropdown-item"  th:href="@{/libro/registrar}">Crear Libro</a></li>
                     <li><hr sec:authorize="hasRole('ADMIN')" class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" th:href="@{/libro/lista}">Listar Libros</a></li>
+                    <li><a class="dropdown-item" th:if="${session.usuariosesion != null}" th:href="@{/libro/lista}">Listar Libros</a></li>
                 </ul>
             </li>
             <li class="nav-item dropdown">

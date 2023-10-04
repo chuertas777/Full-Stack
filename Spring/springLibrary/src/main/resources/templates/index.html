@@ -4,8 +4,8 @@
     <head th:replace= "/fragments/head :: head"></head>
     <body>
         <nav th:replace= "/fragments/navbar :: nav"></nav>
-        
-         <div th:if="${exito}!=null" class="card text-white bg-success mb-3 mt-3 mensajeExito" >
+
+        <div th:if="${exito}!=null" class="card text-white bg-success mb-3 mt-3 mensajeExito" >
             <div class="card-body">
                 <h5 class="card-title">Exito</h5>
                 <p class="card-text" th:text="${exito}"></p>
@@ -35,10 +35,9 @@
 
         <footer th:replace= "/fragments/footer :: footer"></footer>
 
-
-
-        <!-- JavaScript Bundle with Popper -->
-        <script th:replace= "/fragments/scripts :: script"></script>
+        <!-- JavaScript Bundle with Popper 
+        <script th:replace= "/fragments/scripts :: script"></script>-->
+        <script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     </body>
 
 </html>
