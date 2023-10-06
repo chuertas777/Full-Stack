@@ -61,7 +61,6 @@ public class PortalController {
             modelo.put("archivo", archivo);
             return "registro.html";
         }
-
     }
 
     @GetMapping("/login")

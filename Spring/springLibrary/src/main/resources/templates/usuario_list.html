@@ -17,8 +17,6 @@
                         <th scope="col">Foto de Perfil</th>
                         <th scope="col">Rol</th>
                         <th scope="col">Cambiar Rol</th>
-                        <th scope="col">Modificar</th>
-
                     </tr>
                 </thead>
                 <tbody th:each="usuario : ${usuarios}"> 
@@ -34,11 +32,6 @@
                         <td>
                             <a th:href= "@{/admin/modificarRol/__${usuario.id}__}"><i class="fas fa-feather-alt"></i>Cambiar</a>
                         </td>
-
-                        <td>
-                            <a th:href= "@{/usuario/modificar/__${usuario.id}__}"><i class="fas fa-feather-alt"></i> Modificar</a>
-                        </td>
-
                     </tr>
 
                 </tbody>

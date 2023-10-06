@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <head th:replace= "/fragments/head :: head"></head>
     <body>
@@ -6,12 +10,11 @@
         <nav th:replace= "/fragments/navbar :: nav"></nav>
         <!-- Fin Nav -->
         <div class="container-fluid m-5 contenedor">
-
             <!-- Formulario -->    
-            <form class="formulario" th:action="@{/perfil/__${usuario.id}__}" method="POST" enctype="multipart/form-data">
+            <form class="formulario" th:action="@{/admin/perfil/__${usuario.id}__}" method="POST" enctype="multipart/form-data">
                 <input hidden th:value="${id}" name="id">
                 <div class="form-group my-3">
-                    <h3 class="card-title">Editar Usuario</h3>
+                    <h3 class="card-title">Editar Usuario administrador</h3>
                 </div>
                 <div class="form-group my-3">
                     <input type="text" class="form-control" name="nombre"  th:value="${usuario.nombre}">
@@ -30,16 +33,14 @@
                 </div>
                 <button type="submit" class="btn btn-primary mt-3 botones">Actualizar</button>
             </form>
-            <!-- Formulario -->
             <section class=" text-center container">
                 <div class="row mt-3">
                     <div class="divVolver">
-                        <a th:href="@{/inicio}" class="btn btn-secondary my-2 botonVolver botones">Volver</a>
+                        <a th:href="@{/admin/dashboard}" class="btn btn-secondary my-2 botonVolver botones">Volver</a>
                     </div>
                 </div>
             </section>
         </div>
-
         <footer th:replace= "/fragments/footer :: footer"></footer>
         <script th:replace= "/fragments/scripts :: script"></script>
     </body>
